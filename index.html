@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Tic-Tac-Toe</title>
+  </head>
+  <body>
+    <h1>Tic-Tac-Toe</h1>
+    <div class="main">
+      <div class="score-table">
+        <div class="score-content">
+          <i class="far fa-user fa-2x"></i>
+          <h5>HARD</h5>
+        </div>
+        <div class="score-content pad">
+          <h3>X</h3>
+          <h4 id="score--x">3</h4>
+        </div>
+        <div class="score-content pad">
+          <h3>Tie</h3>
+          <h4 id="score--tie">2</h4>
+        </div>
+        <div class="score-content pad">
+          <h3>O</h3>
+          <h4 id="score--o">5</h4>
+        </div>
+      </div>
+      <div class="game-board">
+        <table id="board">
+          <tr>
+            <td class="columns"></td>
+            <td class="columns"></td>
+            <td class="columns"></td>
+          </tr>
+          <tr>
+            <td class="columns"></td>
+            <td class="columns"></td>
+            <td class="columns"></td>
+          </tr>          
+          <tr>
+            <td class="columns"></td>
+            <td class="columns"></td>
+            <td class="columns"></td>
+          </tr> 
+        </table>
+      </div>
+      <div class="reset">
+        <button><i class="fas fa-sync-alt"></i></i>  Reset</button>
+      </div>
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

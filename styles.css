@@ -1,0 +1,83 @@
+body {
+  text-align: center;
+  background-color: #f9a828;
+}
+
+h1 {
+  font-family: "Amaranth", sans-serif;
+  font-size: 7em;
+  color: #2e383f;
+}
+
+.score-content {
+  font-family: "Sora", sans-serif;
+  font-size: 20px;
+  color: #2e383f;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: #07617d;
+  width: 80%;
+  margin-top: 10%;
+}
+
+.score-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 50px;
+}
+
+.score-content {
+  padding: 2rem;
+}
+
+.pad {
+  padding-top: 15px;
+}
+
+table,
+tr,
+td {
+  border: 1px solid grey;
+  background-color: #ececeb;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+tr {
+  height: 100px;
+}
+
+td {
+  width: 100px;
+  border-radius: 20%;
+}
+
+.game-board {
+  padding-top: 100px;
+  margin-bottom: 5%;
+}
+
+.mark {
+  width: 85%;
+  height: 85%;
+  font-weight: 900;
+  filter: invert(46%) sepia(61%) saturate(2311%) hue-rotate(204deg)
+    brightness(103%) contrast(101%);
+}
+
+@media screen and (max-width: 500px) {
+  .score-table {
+    width: 70%;
+  }
+}
+
+.hidden {
+  display: none;
+}
