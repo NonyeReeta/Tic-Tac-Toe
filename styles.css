@@ -7,6 +7,8 @@ h1 {
   font-family: "Amaranth", sans-serif;
   font-size: 7em;
   color: #2e383f;
+  margin-top: 3px;
+  margin-bottom: 0px;
 }
 
 .score-content {
@@ -21,7 +23,7 @@ h1 {
   margin: auto;
   background-color: #07617d;
   width: 80%;
-  margin-top: 10%;
+  margin-top: 5px;
 }
 
 .score-table {
@@ -80,4 +82,7 @@ td {
 
 .hidden {
   display: none;
+}
+.stop-clicks {
+  pointer-events: none;
 }
