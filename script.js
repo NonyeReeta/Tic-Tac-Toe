@@ -6,9 +6,7 @@ const scoreElTie = document.querySelector("#score--tie");
 const resetBtn = document.getElementById("reset");
 const gameBoard = document.querySelector("#board");
 const cells = document.querySelectorAll(".columns");
-console.log(cells.length);
 let activePlayer, currentScoreX, currentScoreO, currentScoreTie, gameOn;
-
 const cellSpot = document.createElement("img");
 cellSpot.className = "mark";
 
@@ -120,14 +118,18 @@ const cellFilled = (selector) => {
 
 const checkwinner = function () {
   if (xWin()) {
+    gameOn = false;
     currentScoreX += 1;
     scoreElX.textContent = currentScoreX;
     console.log("X wins");
   } else if (oWin()) {
+    gameOn = false;
     currentScoreO += 1;
     scoreElO.textContent = currentScoreO;
     console.log("O wins");
   } else {
+    currentScoreTie += 1;
+    scoreElTie.textContent = currentScoreTie;
     console.log(cellFilled("#board td"));
   }
 };
@@ -138,8 +140,10 @@ for (let i = 0; i < cells.length; i++) {
   cells[i].addEventListener(
     "click",
     function () {
-      fillCells(box);
-      checkwinner();
+      if (gameOn) {
+        fillCells(box);
+        checkwinner();
+      }
     },
     { once: true }
   );
