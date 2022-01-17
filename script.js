@@ -84,7 +84,7 @@ const oWin = function () {
       cells[1].innerHTML.substring(9, 17) === o &&
       cells[2].innerHTML.substring(9, 17) === o) ||
     (cells[3].innerHTML.substring(9, 17) === o &&
-      cells[5].innerHTML.substring(9, 17) === o &&
+      cells[4].innerHTML.substring(9, 17) === o &&
       cells[5].innerHTML.substring(9, 17) === o) ||
     (cells[6].innerHTML.substring(9, 17) === o &&
       cells[7].innerHTML.substring(9, 17) === o &&
