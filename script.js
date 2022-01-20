@@ -43,7 +43,7 @@ const fillCells = function (elem) {
   }
 };
 
-// to do: check no winner. why the loop wont break out.
+// defining functions to check for winning scnerios
 const xWin = function () {
   const x = document.getElementById("letter-x").id;
   if (
@@ -110,12 +110,14 @@ const oWin = function () {
     return false;
   }
 };
+// function to check if all cells are filled
 const cellFilled = (selector) => {
   return Array.from(document.querySelectorAll(selector)).every(
     (cell) => cell.textContent.trim() !== ""
   );
 };
 
+// function to check winner and increase score
 const checkwinner = function () {
   if (xWin()) {
     gameOn = false;
@@ -127,28 +129,30 @@ const checkwinner = function () {
     currentScoreO += 1;
     scoreElO.textContent = currentScoreO;
     console.log("O wins");
-  } else {
-    currentScoreTie += 1;
-    scoreElTie.textContent = currentScoreTie;
-    console.log(cellFilled("#board td"));
+  } else if (xWin() === false && oWin() === false) {
+    // currentScoreTie += 1;
+    // scoreElTie.textContent = currentScoreTie;
+    // console.log(cellFilled("#board td"));
   }
 };
 
 // looping through each rows and adding an event listener to each cells
-for (let i = 0; i < cells.length; i++) {
-  let box = cells[i].id;
-  cells[i].addEventListener(
-    "click",
-    function () {
-      if (gameOn) {
-        fillCells(box);
-        checkwinner();
-      }
-    },
-    { once: true }
-  );
-}
-
+const gameStart = function () {
+  for (let i = 0; i <= cells.length; i++) {
+    let box = cells[i].id;
+    cells[i].addEventListener(
+      "click",
+      function () {
+        if (gameOn) {
+          fillCells(box);
+          checkwinner();
+        }
+      },
+      { once: true }
+    );
+  }
+};
+gameStart();
 resetBtn.addEventListener("click", function () {
   window.location.href = "index.html";
 });
