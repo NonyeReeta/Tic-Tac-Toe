@@ -84,6 +84,3 @@ td {
 .hidden {
   display: none;
 }
-.stop-clicks {
-  pointer-events: none;
-}

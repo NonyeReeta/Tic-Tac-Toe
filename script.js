@@ -16,17 +16,18 @@ const oMarkSrc = "<img id='letter-o' src='letter2.png' alt='o' class='mark'>";
 // scoreElX.value = 0;
 // scoreElO.value = 0;
 // scoreElTie.value = 0;
-
+scoreElX.textContent = 0;
+scoreElO.textContent = 0;
+scoreElTie.textContent = 0;
+currentScoreO = 0;
+currentScoreTie = 0;
+currentScoreX = 0;
 // game init/restarting function
 const init = function () {
   gameOn = true;
   activePlayer = 0;
-  scoreElX.textContent = 0;
-  scoreElO.textContent = 0;
-  scoreElTie.textContent = 0;
-  currentScoreO = 0;
-  currentScoreTie = 0;
-  currentScoreX = 0;
+  // removeall x and o from board
+  // document.getElementsByTagName("td").remove();
 };
 
 init();
@@ -152,7 +153,13 @@ const gameStart = function () {
     );
   }
 };
-gameStart();
+
 resetBtn.addEventListener("click", function () {
-  window.location.href = "index.html";
+  console.log("reset");
+  for (let i = 0; i < 9; i++) {
+    document.getElementById(`cell${i}`).innerHTML = "";
+  }
+  activePlayer = 0;
+  gameStart();
 });
+gameStart();
