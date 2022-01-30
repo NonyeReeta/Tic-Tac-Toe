@@ -32,18 +32,6 @@ const init = function () {
 
 init();
 
-// function to fill the cells
-const fillCells = function (elem) {
-  let el = document.getElementById(elem);
-  if (activePlayer == 0) {
-    el.innerHTML = xMarkSrc;
-    activePlayer = 1;
-  } else {
-    el.innerHTML = oMarkSrc;
-    activePlayer = 0;
-  }
-};
-
 // defining functions to check for winning scnerios
 const xWin = function () {
   const x = document.getElementById("letter-x").id;
@@ -137,20 +125,44 @@ const checkwinner = function () {
   }
 };
 
+// function to fill the cells
+// const fillCells = function (elem) {
+//   let el = document.getElementById(elem);
+//   if (activePlayer == 0) {
+//     el.innerHTML = xMarkSrc;
+//     activePlayer = 1;
+//   } else {
+//     el.innerHTML = oMarkSrc;
+//     activePlayer = 0;
+//   }
+// };
+
 // looping through each rows and adding an event listener to each cells
 const gameStart = function () {
   for (let i = 0; i <= cells.length; i++) {
-    let box = cells[i].id;
-    cells[i].addEventListener(
-      "click",
-      function () {
-        if (gameOn) {
-          fillCells(box);
-          checkwinner();
-        }
-      },
-      { once: true }
-    );
+    // console.log(cells[i].innerHTML);
+    // let box = `cell${i}`;
+    if (cells[i]) {
+      cells[i].addEventListener(
+        "click",
+        function () {
+          if (gameOn) {
+            // fillCells(box);
+            if (activePlayer == 0) {
+              cells[i].innerHTML = xMarkSrc;
+              activePlayer = 1;
+            } else {
+              cells[i].innerHTML = oMarkSrc;
+              activePlayer = 0;
+            }
+            if (cells[4].innerHTML != "") {
+              checkwinner();
+            }
+          }
+        },
+        { once: true }
+      );
+    }
   }
 };
 
