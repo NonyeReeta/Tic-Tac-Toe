@@ -26,8 +26,6 @@ currentScoreX = 0;
 const init = function () {
   gameOn = true;
   activePlayer = 0;
-  // removeall x and o from board
-  // document.getElementsByTagName("td").remove();
 };
 
 init();
@@ -156,6 +154,7 @@ const gameStart = function () {
               activePlayer = 0;
             }
             if (cells[4].innerHTML != "") {
+              console.log("check winner");
               checkwinner();
             }
           }
@@ -171,7 +170,7 @@ resetBtn.addEventListener("click", function () {
   for (let i = 0; i < 9; i++) {
     document.getElementById(`cell${i}`).innerHTML = "";
   }
-  activePlayer = 0;
+  init();
   gameStart();
 });
 gameStart();
